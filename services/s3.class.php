@@ -1877,6 +1877,13 @@ class AmazonS3 extends CFRuntime
 			}
 		}
 
+		if (empty($metadata['Headers'])) {
+			$metadata['Headers'] = array();
+		}
+		if (empty($opt['headers'])) {
+			$opt['headers'] = array();
+		}
+
 		// Remove a header
 		unset($metadata['Headers']['date']);
 
